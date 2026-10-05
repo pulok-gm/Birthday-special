@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 💖</title>
+  <meta name="description" content="A little birthday surprise, made with love, from far away." />
+  <meta name="theme-color" content="#ffc8dd" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="locked">
+  <div class="floaties" id="floaties" aria-hidden="true"></div>
+
+  <!-- 1. Gift box intro -->
+  <section id="intro" class="intro">
+    <p class="intro-hint" id="intro-hint"></p>
+    <button id="gift-btn" class="gift" aria-label="Open your gift">
+      <span class="gift-lid"><span class="bow"><span></span><span></span></span></span>
+      <span class="gift-box"></span>
+    </button>
+    <p class="tap-text">tap to open 🎁</p>
+  </section>
+
+  <main id="main" class="main" hidden>
+    <!-- 2. Cake -->
+    <section id="cake-section" class="section cake-section">
+      <h1 class="title">
+        <span class="wave" id="wave-title">Happy Birthday</span>
+        <span class="name" data-name></span>
+      </h1>
+      <p class="subtitle" id="cake-instruction">Make a wish &amp; blow out the candles 🕯️</p>
+
+      <div class="cake" id="cake">
+        <div class="candles" id="candles"></div>
+        <div class="layer layer-top"><span class="icing"></span></div>
+        <div class="layer layer-mid"><span class="icing"></span></div>
+        <div class="layer layer-bottom"><span class="icing"></span></div>
+        <div class="plate"></div>
+      </div>
+
+      <div class="cake-controls" id="cake-controls">
+        <button id="mic-btn" class="btn">🎤 Blow into the mic</button>
+        <span class="or">or tap the flames</span>
+      </div>
+      <p class="wish-msg" id="wish-msg" hidden></p>
+      <a href="#letter-section" class="scroll-cue" id="scroll-cue" hidden>there's more ↓</a>
+    </section>
+
+    <!-- 3. Letter -->
+    <section id="letter-section" class="section">
+      <h2 class="reveal">A little letter for you <span class="wiggle">💌</span></h2>
+      <div class="envelope-stage reveal" id="envelope-stage">
+        <button class="envelope" id="envelope" aria-label="Open the letter">
+          <span class="env-flap"></span>
+          <span class="seal">💖</span>
+        </button>
+        <p class="tap-text small" id="env-hint">tap the envelope</p>
+        <article class="letter-card" id="letter-card" aria-live="polite">
+          <p><span id="letter-text"></span><span class="cursor" id="cursor">|</span></p>
+          <p class="signature" id="signature"></p>
+          <span class="skip-hint" id="skip-hint">tap to skip</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Reasons -->
+    <section id="reasons-section" class="section">
+      <h2 class="reveal">Reasons I love you <span class="wiggle">🥰</span></h2>
+      <p class="subtitle reveal">tap the cards!</p>
+      <div class="reasons-grid" id="reasons-grid"></div>
+    </section>
+
+    <!-- 5. Timeline -->
+    <section id="timeline-section" class="section">
+      <h2 class="reveal">Our little story <span class="wiggle">📸</span></h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- Finale -->
+    <section id="finale" class="section finale">
+      <div class="big-heart reveal">💖</div>
+      <p class="finale-text reveal" id="finale-text"></p>
+      <p class="finale-sign reveal">Happy birthday, <span data-name></span>. Love, <span id="from-name"></span></p>
+      <div class="finale-buttons reveal">
+        <button class="btn" id="confetti-btn">More confetti 🎉</button>
+        <button class="btn btn-alt" id="replay-btn">Relight the candles 🕯️</button>
+      </div>
+    </section>
+  </main>
+
+  <button class="music-btn" id="music-btn" aria-label="Toggle music" hidden>🎵</button>
+  <audio id="bg-music" src="assets/music.mp3" loop preload="auto"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="content.js"></script>
+  <script src="sounds.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
